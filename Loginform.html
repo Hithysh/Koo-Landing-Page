@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <title>Animated login form</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .formcontainer{
+        /* background: lavenderblush; */
+        background-image:linear-gradient(to right,rgb(251, 237, 113),pink);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size:cover;
+        height:100vh;
+      }
+      .form{
+        /* background: rgba(231, 74, 127,0.1); */
+        /* background-image: linear-gradient(to right, pink, lightgreen); */
+        background: transparent;
+        height:50%;
+        width:35%;
+        border-radius: 25px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* border: 2px double rgb(223, 112, 149); */
+        box-shadow:1px 4px 2px 2px rgba(243, 150, 150, 0.6);
+        position:relative;
+        
+      }
+      @media(max-width:849px){
+        .form{
+          height:55%;
+          width: 50%;
+        }
+      }
+      @media(max-width:515px){
+        .form{
+          width: 60%;
+        }
+      }
+      @media(max-width:422px){
+        .form{
+          width: 80%;
+        }
+      }
+      @media(max-width:290px){
+        .form{
+          width: 95%;
+        }
+      }
+      .inputbox{
+        display:flex;
+        /* flex-direction: column; */
+        position:relative;
+        margin:20px 0;
+        width:250px;
+        border-bottom:2px solid #6a6767;
+        opacity:.75;
+      }
+      .inputbox:hover{
+        opacity:1;
+      } 
+      .inputbox label{
+        position:absolute;
+        top:50%;
+        left:5px;
+        transform: translateY(-50%);
+        font-size: 1.2em;
+        pointer-events: none;
+        transition:.2s;
+        font-weight:600;
+      }
+      /* .inputbox label:hover{
+        transform: translateY(-50%);
+      } */
+      /* input{
+        order:2;
+      }
+      label{
+        order:1;
+      } */
+      /* input:focus+label input:valid+label{
+        top:5px;
+        color:blueviolet;
+      } */
+      .inputbox:focus-within{
+        border-bottom:2px solid #800000;
+      }
+      .inputbox:valid{
+        border-bottom:2px solid #800000;
+      }
+      .inputbox:focus-within label{
+        /* color:blueviolet; */
+        top:6px;
+        font-size:1em;
+        /* color:rgb(223, 112, 149); */
+        color:#800000;
+        font-weight:700px;
+      }
+      input:valid~label{
+        top:6px;
+        font-size:1em;
+        /* color:rgb(223, 112, 149); */
+        color:#800000;
+        font-weight: 700px;
+      }/*:valid is a css pseudo class*/
+      .inputbox input{
+        background: transparent;
+        height:50px;
+        width:100%;
+        border:none;
+        outline:none;
+        font-size: 1em;
+        padding:0 35px 0 5px;
+       
+      }
+      button{
+        cursor:pointer;
+        height:30px;
+        border-radius: 40px;
+        width: 30%;
+        border:none;
+        font-size: 1em;
+        cursor: pointer;
+        margin:8px;
+      }
+      button:hover{
+        background: rgb(99, 212, 212);
+      }
+      .icon{
+        color: #6a6767;
+        position:absolute;
+        margin-left:220px;
+      }
+      .inputpack{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      a{
+        text-decoration: none;
+        color:black;
+        font-weight: 600;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+      /* .input:focus~label,input:valid~label{
+        top:-5px;
+      } */
+      h2{
+        color:black;
+      }
+      span{
+        color:#800000;
+      }
+      input{
+        color:black;
+      }
+    </style>
+</head>
+<body>
+    <section>
+      <form action="#" title="Loginform" method="get" >
+        <div class="formcontainer">
+            <div class="form">
+                <h2>Login</h2>
+                <div class="inputpack">
+                <div class="inputbox">
+                    <input type="email" required>
+                    <label for="email">email</label>
+                </div>
+              <i class="fa-solid fa-envelope icon"></i>
+            </div>
+            <div class="inputpack">
+                <div class="inputbox">
+                  <input type="password" required>
+                  <label for="password">password</label>
+                </div>
+                <i class="fa-solid fa-lock icon"></i>
+              </div>
+                <div>
+                 <label><input type="checkbox"><span>Remember me</span>
+                 <a href="#">forgot password</a></label>
+                </div>
+                <button type="submit" >Login</button>
+                <div>
+                 <span>Don't have an account?</span><a href="#">Register now</a>
+                </div>
+            </div>
+        </div>
+      </form>
+    </section>
+</body>
+</html>
